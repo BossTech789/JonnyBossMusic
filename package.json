@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "firebase": "^13.0.0",
-    "firebase-admin": "^14.5.0",
+    "firebase-admin": "^13.10.0",
     "next": "16.4.2",
     "next-cloudinary": "^6.19.3",
     "nodemailer": "^10.2.0",
