@@ -1,0 +1,26 @@
+{
+  "name": "jonnybossmusic",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "firebase": "^13.0.0",
+    "firebase-admin": "^14.5.0",
+    "next": "16.4.2",
+    "next-cloudinary": "^6.19.3",
+    "nodemailer": "^10.2.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.2",
+    "tailwindcss": "^4"
+  }
+}
