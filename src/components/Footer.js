@@ -2,14 +2,14 @@
 import Link from "next/link";
 
 const socialLinks = [
-  { name: "Facebook", url: "" },
-  { name: "Instagram", url: "" },
-  { name: "X", url: "" },
-  { name: "Snapchat", url: "" },
-  { name: "TikTok", url: "" },
-  { name: "Spotify Artist", url: "" },
-  { name: "Audiomack", url: "" },
-  { name: "Apple Music Artist", url: "" },
+  { name: "Facebook", url: "https://www.facebook.com/realjonnyboss1" },
+  { name: "Instagram", url: "https://www.instagram.com/realjonnyboss" },
+  { name: "X", url: "https://x.com/realjonnyboss" },
+  { name: "Snapchat", url: "https://www.snapchat.com/add/realjonnyboss" },
+  { name: "TikTok", url: "https://www.tiktok.com/@realjonnyboss" },
+  { name: "Spotify Artist", url: "https://open.spotify.com/artist/7qy2Fy69zpEJVrWqU2CrlF" },
+  { name: "Audiomack", url: "https://audiomack.com/realjonnyboss" },
+  { name: "Apple Music Artist", url: "https://music.apple.com/ng/artist/jonny-boss/1625954922" },
 ];
 
 export default function Footer() {
