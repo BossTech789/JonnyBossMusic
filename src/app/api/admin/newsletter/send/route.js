@@ -348,13 +348,23 @@ export async function POST(request) {
       sentCount,
       failedCount,
     });
-  } catch (error) {
-    console.error("Newsletter API error:", error);
+  }  catch (error) {
+  console.error("Newsletter API error:", {
+    message: error?.message,
+    code: error?.code,
+    name: error?.name,
+    command: error?.command,
+    responseCode: error?.responseCode,
+  });
 
-    return NextResponse.json(
-      { error: "The newsletter campaign could not be completed." },
-      { status: 500 }
-    );
+  return NextResponse.json(
+    {
+      error:
+        error?.message ||
+        "The newsletter campaign could not be completed.",
+    },
+    { status: 500 }
+  );
   } finally {
     if (transporter) {
       transporter.close();
