@@ -279,26 +279,224 @@ export async function POST(request) {
         ].join("\n");
 
         const htmlMessage = safeMessage.replace(/\r?\n/g, "<br>");
+```javascript
+const html = `
+  <!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Jonny Boss Newsletter</title>
+    </head>
 
-        const html = `
-          <!doctype html>
-          <html lang="en">
-            <body style="margin:0;background:#1c1917;color:#fafaf9;font-family:Arial,sans-serif;padding:24px">
-              <main style="max-width:600px;margin:auto;background:#292524;padding:28px;border-radius:12px">
-                <h1 style="color:#fbbf24">Jonny Boss</h1>
-                <h2>${safeSubject}</h2>
-                <p style="line-height:1.7">${htmlMessage}</p>
-                <hr style="border:0;border-top:1px solid #57534e;margin:28px 0">
-                <p style="font-size:12px;color:#d6d3d1">
-                  You received this email because you subscribed to Jonny Boss updates.
-                </p>
-                <p style="font-size:12px">
-                  <a href="${unsubscribeUrl}" style="color:#fbbf24">Unsubscribe from these emails</a>
-                </p>
-              </main>
-            </body>
-          </html>
-        `;
+    <body style="
+      margin:0;
+      padding:0;
+      background-color:#1c1410;
+      color:#f5e9dc;
+      font-family:Arial,Helvetica,sans-serif;
+    ">
+
+      <table role="presentation" width="100%" cellspacing="0" cellpadding="0"
+        style="background-color:#1c1410;padding:30px 12px;">
+        <tr>
+          <td align="center">
+
+            <table role="presentation" width="100%" cellspacing="0" cellpadding="0"
+              style="
+                max-width:600px;
+                background-color:#2b1e18;
+                border-radius:16px;
+                overflow:hidden;
+                border:1px solid #5c4030;
+              ">
+
+              <!-- Header -->
+              <tr>
+                <td align="center" style="
+                  background-color:#3b281e;
+                  padding:38px 24px 30px;
+                  border-bottom:3px solid #b8895b;
+                ">
+                  <p style="
+                    margin:0 0 10px;
+                    color:#d6b18a;
+                    font-size:11px;
+                    letter-spacing:4px;
+                    text-transform:uppercase;
+                  ">
+                    Official Fan Newsletter
+                  </p>
+
+                  <h1 style="
+                    margin:0;
+                    color:#f5e6d3;
+                    font-family:Georgia,'Times New Roman',serif;
+                    font-size:36px;
+                    letter-spacing:2px;
+                    line-height:1.3;
+                  ">
+                    JONNY BOSS
+                  </h1>
+
+                  <p style="
+                    margin:12px 0 0;
+                    color:#d6b18a;
+                    font-size:13px;
+                    letter-spacing:1px;
+                  ">
+                    MUSIC • LOVE • APPRECIATION
+                  </p>
+                </td>
+              </tr>
+
+              <!-- Main Message -->
+              <tr>
+                <td style="padding:34px 28px 20px;">
+
+                  <h2 style="
+                    margin:0 0 22px;
+                    color:#e7bc8c;
+                    font-family:Georgia,'Times New Roman',serif;
+                    font-size:25px;
+                    line-height:1.4;
+                  ">
+                    ${safeSubject}
+                  </h2>
+
+                  <div style="
+                    color:#f5e9dc;
+                    font-size:15px;
+                    line-height:1.9;
+                    overflow-wrap:break-word;
+                  ">
+                    ${htmlMessage}
+                  </div>
+
+                  <div style="
+                    margin:30px 0;
+                    padding:22px 20px;
+                    background-color:#3b281e;
+                    border-left:4px solid #b8895b;
+                    border-radius:6px;
+                  ">
+                    <p style="
+                      margin:0;
+                      color:#f0d5b5;
+                      font-family:Georgia,'Times New Roman',serif;
+                      font-size:17px;
+                      font-style:italic;
+                      line-height:1.8;
+                    ">
+                      "Every song has a story, and every fan is part of mine.
+                      Thank you for being part of this journey."
+                    </p>
+                    <p style="
+                      margin:14px 0 0;
+                      color:#d6b18a;
+                      font-size:12px;
+                      letter-spacing:1px;
+                    ">
+                      — WITH LOVE, JONNY BOSS
+                    </p>
+                  </div>
+
+                  <p style="
+                    margin:0 0 12px;
+                    color:#e7bc8c;
+                    font-size:15px;
+                    font-weight:bold;
+                  ">
+                    Stay connected. Stay inspired.
+                  </p>
+
+                  <p style="
+                    margin:0;
+                    color:#d6c1ad;
+                    font-size:14px;
+                    line-height:1.8;
+                  ">
+                    Keep supporting the music, sharing the love, and being
+                    part of the Jonny Boss family. More music, exciting news,
+                    and special updates are on the way!
+                  </p>
+
+                </td>
+              </tr>
+
+              <!-- Footer -->
+              <tr>
+                <td align="center" style="
+                  background-color:#211712;
+                  padding:26px 24px;
+                  border-top:1px solid #5c4030;
+                ">
+                  <p style="
+                    margin:0 0 8px;
+                    color:#e7bc8c;
+                    font-family:Georgia,'Times New Roman',serif;
+                    font-size:19px;
+                    letter-spacing:1px;
+                  ">
+                    JONNY BOSS
+                  </p>
+
+                  <p style="
+                    margin:0 0 18px;
+                    color:#bda895;
+                    font-size:12px;
+                    line-height:1.8;
+                  ">
+                    Thank you for being part of the family.<br>
+                    Your support means more than words can say.
+                  </p>
+
+                  <div style="
+                    height:1px;
+                    background-color:#493326;
+                    margin:18px 0;
+                  "></div>
+
+                  <p style="
+                    margin:0 0 12px;
+                    color:#a99481;
+                    font-size:11px;
+                    line-height:1.8;
+                  ">
+                    You received this email because you subscribed to
+                    Jonny Boss updates.
+                  </p>
+
+                  <a href="${unsubscribeUrl}" style="
+                    color:#d6b18a;
+                    font-size:12px;
+                    text-decoration:underline;
+                  ">
+                    Unsubscribe from these emails
+                  </a>
+
+                </td>
+              </tr>
+
+            </table>
+
+            <p style="
+              margin:18px 0 0;
+              color:#8c7665;
+              font-size:11px;
+              text-align:center;
+            ">
+              © ${new Date().getFullYear()} Jonny Boss. All rights reserved.
+            </p>
+
+          </td>
+        </tr>
+      </table>
+
+    </body>
+  </html>
+`;
+```
 
         await transporter.sendMail({
           from: `"Jonny Boss" <${gmailUser}>`,
