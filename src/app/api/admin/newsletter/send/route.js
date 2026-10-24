@@ -169,7 +169,7 @@ export async function POST(request) {
 
     // Set NEXT_PUBLIC_SITE_URL to your website's base URL.
     // Local development can use http://localhost:3000.
-    const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+    const configuredSiteUrl = process.env.SITE_URL;
 
     if (!configuredSiteUrl) {
       return NextResponse.json(
