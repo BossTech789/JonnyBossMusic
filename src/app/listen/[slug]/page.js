@@ -194,12 +194,16 @@ export default function PublicSmartLinkPage() {
 
           <div className="p-6 text-center sm:p-8">
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-[#a97955]">
-              Now Streaming
-            </p>
+  Now Streaming
+</p>
 
-            <h1 className="break-words text-3xl font-black sm:text-4xl">
-              {song.title}
-            </h1>
+<span className="mb-4 inline-flex rounded-full border border-[#a97955]/40 bg-[#70432c]/20 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#d7ad88]">
+  {song.releaseType || "Single"}
+</span>
+
+<h1 className="break-words text-3xl font-black sm:text-4xl">
+  {song.title}
+</h1>
 
             <p className="mt-3 text-sm leading-6 text-[#c9b9ae]">
               Listen to the official release by Jonny Boss.
