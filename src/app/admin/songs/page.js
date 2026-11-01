@@ -55,6 +55,7 @@ export default function SongsPage() {
 
   const [title, setTitle] = useState("");
   const [releaseDate, setReleaseDate] = useState("");
+  const [releaseType, setReleaseType] = useState("Single");
   const [coverImage, setCoverImage] = useState("");
   const [streamingLinks, setStreamingLinks] = useState({
     ...emptyLinks,
@@ -218,6 +219,8 @@ export default function SongsPage() {
     }));
   };
 
+  // Add the type of of sons
+
   // Add a new song.
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -283,6 +286,7 @@ export default function SongsPage() {
       await addDoc(collection(db, "songs"), {
         title: title.trim(),
         releaseDate: releaseDate || "",
+        releaseType: releaseType,
         coverImage: coverImage || "",
         streamingLinks: links,
         createdAt: serverTimestamp(),
@@ -292,6 +296,7 @@ export default function SongsPage() {
 
       setTitle("");
       setReleaseDate("");
+      setReleaseType("Single");
       setCoverImage("");
       setStreamingLinks({ ...emptyLinks });
 
@@ -457,6 +462,28 @@ export default function SongsPage() {
               />
             </div>
 
+            {/* Release type */}
+<div>
+  <label
+    htmlFor="releaseType"
+    className="mb-2 block text-sm font-medium"
+  >
+    Release type *
+  </label>
+
+  <select
+    id="releaseType"
+    value={releaseType}
+    onChange={(event) => setReleaseType(event.target.value)}
+    required
+    className="w-full rounded-lg border border-stone-700 bg-stone-950 px-4 py-3 outline-none focus:border-amber-500"
+  >
+    <option value="Single">Single</option>
+    <option value="EP">EP</option>
+    <option value="Album">Album</option>
+  </select>
+</div>
+
             {/* Cover image */}
             <div>
               <label
@@ -591,6 +618,10 @@ export default function SongsPage() {
                     <h3 className="break-words text-lg font-semibold">
                       {song.title}
                     </h3>
+
+                    <span className="mt-2 inline-block rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-amber-400">
+                      {song.releaseType || "Single"}
+                    </span>
 
                     {song.releaseDate && (
                       <p className="mt-1 text-sm text-stone-400">

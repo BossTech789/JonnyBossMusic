@@ -271,7 +271,7 @@ export default function Home() {
             className="mt-5 text-base sm:text-xl"
             style={{ color: settings.textColor }}
           >
-            Real music. Real emotion.
+            True Story for Everyone.
           </p>
 
           <div className="mt-9 flex flex-wrap justify-center gap-4">
@@ -345,11 +345,9 @@ export default function Home() {
                     </div>
 
                     <div className="p-5 text-center">
-                      {song.type && (
-                        <p className="text-xs font-bold uppercase tracking-wider text-[#a97955]">
-                          {song.type}
-                        </p>
-                      )}
+                      <p className="mb-2 inline-flex rounded-full border border-[#a97955]/40 bg-[#70432c]/30 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-[#d6a77f]">
+                         {song.releaseType || "Single"}
+                      </p>
 
                       <h3 className="mt-2 text-lg font-bold">
                         {song.title || "Untitled Song"}

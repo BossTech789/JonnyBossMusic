@@ -267,9 +267,13 @@ export default function MusicPage() {
                   </div>
 
                   <div className="flex flex-1 flex-col p-5 sm:p-6">
+                      <span className="mb-3 inline-flex w-fit rounded-full border border-[#a97955]/40 bg-[#70432c]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-[#70432c]">
+                        {song.releaseType || "Single"}
+                      </span>
+
                     <h3 className="break-words text-xl font-black">
                       {title}
-                    </h3>
+                   </h3>
 
                     {song.releaseDate && (
                       <p className="mt-2 text-sm text-[#8d5b3d]">

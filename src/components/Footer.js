@@ -7,9 +7,9 @@ const socialLinks = [
   { name: "X", url: "https://x.com/realjonnyboss" },
   { name: "Snapchat", url: "https://www.snapchat.com/add/realjonnyboss" },
   { name: "TikTok", url: "https://www.tiktok.com/@realjonnyboss" },
-  { name: "Spotify Artist", url: "https://open.spotify.com/artist/7qy2Fy69zpEJVrWqU2CrlF" },
+  { name: "Spotify", url: "https://open.spotify.com/artist/7qy2Fy69zpEJVrWqU2CrlF" },
   { name: "Audiomack", url: "https://audiomack.com/realjonnyboss" },
-  { name: "Apple Music Artist", url: "https://music.apple.com/ng/artist/jonny-boss/1625954922" },
+  { name: "Apple Music", url: "https://music.apple.com/ng/artist/jonny-boss/1625954922" },
 ];
 
 export default function Footer() {
